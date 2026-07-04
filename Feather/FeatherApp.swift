@@ -41,9 +41,9 @@ struct FeatherApp: App {
 			// dear god help me
 			.onAppear {
 				// Fsign: 首次启动自动加载默认软件源(装完即用,无需手动加源)
-				// ⚠️ 测试期(Phase 1/2)指向静态测试 JSON,不碰生产 PHP。
-				//    真机验通后(Phase 3),改回 https://line.frank3.com/altstore 即可。
-				let _fsignSourceURL_TEST = "https://raw.githubusercontent.com/CHANGE_ME/fsign-repo/main/fsign-test.json"
+				// 现指向 GitHub 托管的真实 AltStore 源(fa_category 的 LINE 多开 App)。
+				// 生产化后改为 line.frank3.com 的 AltStore 接口(带 per-udid 解锁)即可。
+				let _fsignSourceURL_TEST = "https://raw.githubusercontent.com/linmingg1/Fsign/main/fsign-repo.json"
 				if !UserDefaults.standard.bool(forKey: "Fsign.didSeedDefaultSource"),
 				   let _fsignSourceURL = URL(string: _fsignSourceURL_TEST) {
 					Storage.shared.addSource(_fsignSourceURL, name: "Fsign 软件源", identifier: "com.fsign.repo") { error in
@@ -56,7 +56,7 @@ struct FeatherApp: App {
 					UIApplication.topViewController()?.view.window?.overrideUserInterfaceStyle = style
 				}
 				
-				UIApplication.topViewController()?.view.window?.tintColor = UIColor(Color(hex: UserDefaults.standard.string(forKey: "Feather.userTintColor") ?? "#848ef9"))
+				UIApplication.topViewController()?.view.window?.tintColor = UIColor(Color(hex: UserDefaults.standard.string(forKey: "Feather.userTintColor") ?? "#4EB3EF"))
 			}
 		}
 	}
