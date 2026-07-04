@@ -1,0 +1,31 @@
+{
+  "name": "Fsign 软件源",
+  "identifier": "com.fsign.repo.line",
+  "iconURL": "https://line.frank3.com/uploads/20260601/badafc4dc7f45c82e6efa715965eab2b.jpg",
+  "apps": [
+    {
+      "name": "LINE（纯净版）",
+      "bundleIdentifier": "jp.naver.line.pure",
+      "developerName": "Fsign",
+      "iconURL": "https://line.frank3.com/uploads/20260601/badafc4dc7f45c82e6efa715965eab2b.jpg",
+      "localizedDescription": "LINE 多开 · 纯净版。来自 Fsign 软件源的真实条目,用于验证 Fsign 能解析并展示你的软件源。",
+      "tintColor": "06C755",
+      "versions": [
+        { "version": "14.16.1", "date": "2026-06-01T00:00:00Z", "size": 133336924, "downloadURL": "https://ipa.frank3.com/line/LINE-NexChat-PURE-v17.65.3.ipa", "localizedDescription": "纯净版" }
+      ],
+      "version": "14.16.1", "versionDate": "2026-06-01T00:00:00Z", "size": 133336924, "downloadURL": "https://ipa.frank3.com/line/LINE-NexChat-PURE-v17.65.3.ipa"
+    },
+    {
+      "name": "LINE（带翻译版）",
+      "bundleIdentifier": "jp.naver.line.trans",
+      "developerName": "Fsign",
+      "iconURL": "https://line.frank3.com/uploads/20260601/badafc4dc7f45c82e6efa715965eab2b.jpg",
+      "localizedDescription": "LINE 多开 · 带翻译版。来自 Fsign 软件源的真实条目。",
+      "tintColor": "06C755",
+      "versions": [
+        { "version": "14.16.1", "date": "2026-06-01T00:00:00Z", "size": 133389352, "downloadURL": "https://ipa.frank3.com/line/LINE-NexChat-v17.65.3-final.ipa", "localizedDescription": "带翻译版" }
+      ],
+      "version": "14.16.1", "versionDate": "2026-06-01T00:00:00Z", "size": 133389352, "downloadURL": "https://ipa.frank3.com/line/LINE-NexChat-v17.65.3-final.ipa"
+    }
+  ]
+}
