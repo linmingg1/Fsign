@@ -40,6 +40,18 @@ struct FeatherApp: App {
 			}
 			// dear god help me
 			.onAppear {
+				// Fsign: 首次启动自动加载默认软件源(装完即用,无需手动加源)
+				// ⚠️ 测试期(Phase 1/2)指向静态测试 JSON,不碰生产 PHP。
+				//    真机验通后(Phase 3),改回 https://line.frank3.com/altstore 即可。
+				let _fsignSourceURL_TEST = "https://raw.githubusercontent.com/CHANGE_ME/fsign-repo/main/fsign-test.json"
+				if !UserDefaults.standard.bool(forKey: "Fsign.didSeedDefaultSource"),
+				   let _fsignSourceURL = URL(string: _fsignSourceURL_TEST) {
+					Storage.shared.addSource(_fsignSourceURL, name: "Fsign 软件源", identifier: "com.fsign.repo") { error in
+						if error == nil {
+							UserDefaults.standard.set(true, forKey: "Fsign.didSeedDefaultSource")
+						}
+					}
+				}
 				if let style = UIUserInterfaceStyle(rawValue: UserDefaults.standard.integer(forKey: "Feather.userInterfaceStyle")) {
 					UIApplication.topViewController()?.view.window?.overrideUserInterfaceStyle = style
 				}

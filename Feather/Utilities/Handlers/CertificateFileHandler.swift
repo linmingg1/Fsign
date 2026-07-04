@@ -64,6 +64,13 @@ final class CertificateFileHandler: NSObject {
 		) { _ in
 			Logger.misc.info("[\(self._uuid)] Added to database")
 		}
+
+		// Fsign: 证书导入后,按到期日排程本地提醒(到期前 3/1/0 天)
+		ExpiryNotificationManager.schedule(
+			certUUID: _uuid,
+			nickname: _certNickname,
+			expiration: _certPair?.ExpirationDate ?? Date()
+		)
 	}
 	
 	private func _directory() async throws -> URL {
